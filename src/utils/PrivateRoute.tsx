@@ -1,3 +1,4 @@
+import Home from "@/components/Landing/Home";
 import Login from "@/components/auth/Login";
 import Signin from "@/components/auth/Signin";
 import Deb from "@/components/deb";
@@ -10,6 +11,7 @@ export default function PrivateRoute() {
         <Route path="" element={<Deb/>}/>
         <Route path="/connexion" element={<Login/>} />
         <Route path="/inscription" element={<Signin/>}  />
+        <Route path="/geeksblog.com" element={<Home/>} />
     </Routes>
   )
 }
