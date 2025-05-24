@@ -1,4 +1,8 @@
 import { Button } from "../ui/button";
+import { ArrowRight, Sun } from "lucide-react";
+
+
+
 
 
 
@@ -11,6 +15,10 @@ export default function Home() {
                     <p className="font-bold text-xl text-blue-600">GeeksBlog</p>
                 </div>
                 <div className="flex gap-1.5" >
+                    <div className="">
+                        <Sun className="w-5  text-blue-400" />
+                    </div>
+                  
                   <Button className="h-7" >Login</Button>
                   <Button className="h-7 bg-white hover:bg-blue-50 text-blue-600 border border-blue-200" >Sign in</Button>
                 </div>
@@ -23,8 +31,12 @@ export default function Home() {
                 <p className=' mt-4 text-xl text-neutral-900'>Explorez un univers riche en technologies et <br /> en connaissances numérique</p>
                 <p className='  text-neutral-700'>Que vous soyez passionné de <strong> développeur , administrateur réseau</strong> ou <br /> curieux technophile , ce blog est fait pour vous  ...</p>
                 <p className=' text-neutral-700'>Commencez votre aventure tech dés maintenant !</p>
-                <p className='  text-neutral-700'>Connectez-vous pour publier, commenter, ou poser votre candidature aux publicaations.</p>
+                <p className='  text-neutral-700'>Connectez-vous pour publier, commenter, ou poser votre candidature aux publications.</p>
+                <Button className="h-7 mt-4 bg-white hover:bg-blue-50 text-blue-600 border border-blue-200" >Get started <ArrowRight className="w-6 h-6 text-blue-500" /></Button>
             </div>
+        </div>
+        <div className="flex gap-3">
+
         </div>
     </div>
   )
