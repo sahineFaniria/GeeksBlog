@@ -1,4 +1,4 @@
-import { Sun, User, ThumbsUp, ThumbsDown, MessageCircle, Eye, Share, Star, ArrowRight, ArrowRightCircleIcon, ArrowRightLeftIcon, ArrowRightSquare, ArrowRightSquareIcon, User2, User2Icon, UserCheck, UserCog, UsersRound, UserMinus, UserRoundX, Settings } from "lucide-react";
+import { Sun, User, ThumbsUp, ThumbsDown, MessageCircle, Share, Star , ArrowRightCircleIcon , ArrowRightSquareIcon, User2, Settings } from "lucide-react";
 import { Button } from "../ui/button";
 import { useEffect, useState } from "react";
 import clsx from "clsx";
@@ -20,7 +20,7 @@ export default function Accueil() {
       {/* HEADER */}
       <header className={clsx(
         "fixed top-0 w-full z-50 transition backdrop-blur-lg",
-        scrolled ? "bg-white/80 shadow" : "bg-white"
+        scrolled ? "bg-white/80 shadow" : "bg-white/80"
       )}>
         <div className="container mx-auto flex items-center justify-between px-4 py-3">
           <p className="font-bold text-xl text-blue-600">GeeksBlog</p>

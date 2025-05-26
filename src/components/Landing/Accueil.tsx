@@ -1,7 +1,8 @@
-import { Sun, User, ThumbsUp, ThumbsDown, MessageCircle, Eye, Share, Star } from "lucide-react";
+import { Sun, User, ThumbsUp, ThumbsDown, MessageCircle, Share, Star } from "lucide-react";
 import { Button } from "../ui/button";
 import { useEffect, useState } from "react";
 import clsx from "clsx";
+
 
 export default function Accueil() {
   const [scrolled, setScrolled] = useState(false);
