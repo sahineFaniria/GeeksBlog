@@ -1,10 +1,16 @@
-import { Sun, User, ThumbsUp, ThumbsDown, MessageCircle, Share, Star , ArrowRightCircleIcon , ArrowRightSquareIcon, User2, Settings } from "lucide-react";
-import { Button } from "../ui/button";
 import { useEffect, useState } from "react";
 import clsx from "clsx";
+import {
+  Sun, User, ThumbsUp, ThumbsDown,
+  MessageCircle, Share, Star, User2, Settings, ArrowRightCircleIcon
+} from "lucide-react";
+import { Button } from "../ui/button";
 
-export default function Accueil() {
+export default function Acc2() {
   const [scrolled, setScrolled] = useState(false);
+  const [activeCategory, setActiveCategory] = useState("Frontend");
+
+  const categories = ["Frontend", "Backend", "Reseau", "Base de donnée", "Devops", "Cloud"];
 
   useEffect(() => {
     const handleScroll = () => setScrolled(window.scrollY > 10);
@@ -12,70 +18,81 @@ export default function Accueil() {
     return () => window.removeEventListener("scroll", handleScroll);
   }, []);
 
-  const categories = ["Frontend", "Backend", "Reseau", "Base de donnée", "Devops", "Cloud"];
-  const [activeCategory, setActiveCategory] = useState("Frontend");
-
   return (
-    <div className="w-full h-screen overflow-hidden">
+    <div className="w-full min-h-screen m-0">
       {/* HEADER */}
-      <header className={clsx(
-        "fixed top-0 w-full z-50 transition backdrop-blur-lg",
-        scrolled ? "bg-white/80 shadow" : "bg-white/80"
-      )}>
+      <header
+        className={clsx(
+          "fixed top-0 w-full z-50 transition-all backdrop-blur-lg",
+          scrolled ? "bg-white/80 shadow" : "bg-white"
+        )}
+      >
         <div className="container mx-auto flex items-center justify-between px-4 py-3">
           <p className="font-bold text-xl text-blue-600">GeeksBlog</p>
           <div className="flex gap-2 items-center">
             <Sun className="w-5 text-blue-400" />
-            <Button className="h-7 bg-white hover:bg-blue-50 text-blue-600 border border-blue-200">Déconnexion <ArrowRightSquareIcon className="w-6 h-6 text-blue-500 ml-1" /></Button>
+            <Button className="h-7">Login</Button>
+            <Button className="h-7 bg-white hover:bg-blue-50 text-blue-600 border border-blue-200">
+              Sign in
+            </Button>
           </div>
         </div>
       </header>
 
-      {/* MAIN SECTION */}
-      <main className="pt-16 h-full flex">
-        {/* LEFT COLUMN */}
-        <aside className="w-1/4 p-4 border-r overflow-y-auto">
+      {/* MAIN CONTENT */}
+      <main className="pt-16 flex w-full min-h-screen">
+        {/* LEFT SIDEBAR */}
+        <aside className="w-1/4 p-4 fixed left-0 top-16 bottom-0 border-r overflow-y-auto">
           <div className="mb-6">
             <h2 className="font-semibold text-sm text-gray-700">Une techno en tête ?</h2>
             <p className="text-sm text-gray-600 mt-1">
               Utilisez la barre de recherche pour trouver rapidement des sujets liés à vos centres d’intérêt.
             </p>
           </div>
-          <input type="text" placeholder="Rechercher..." className="w-full mb-4 px-3 py-2 border rounded text-sm" />
+          <input
+            type="text"
+            placeholder="Rechercher..."
+            className="w-full mb-4 px-3 py-2 border rounded text-sm"
+          />
           <div className="space-y-3">
             {[1, 2, 3].map((res) => (
               <div key={res} className="border p-3 rounded text-sm">
                 <p className="font-semibold text-blue-600">@utilisateur{res}</p>
-                <p className="mt-1 text-gray-700">Un extrait du résultat recherché très pertinent...</p>
+                <p className="mt-1 text-gray-700">
+                  Un extrait du résultat recherché très pertinent...
+                </p>
                 <p className="text-xs text-gray-500 mt-1">Il y a {res}j</p>
               </div>
             ))}
           </div>
         </aside>
 
-        {/* CENTER COLUMN */}
-        <section className="w-2/4 h-full overflow-y-auto p-4">
-          <div className="flex space-x-3 overflow-x-auto pb-2">
-          {categories.map((cat, idx) => (
-        <button
-          key={idx}
-          onClick={() => setActiveCategory(cat)}
-          className={`whitespace-nowrap px-4 py-1 text-sm border rounded-full transition
-            ${
-              activeCategory === cat
-                ? "bg-blue-100 text-blue-600 border-blue-300"
-                : "text-gray-600 hover:text-gray-800 border-gray-300 hover:bg-blue-50"
-            }
-          `}
-        >
-          {cat}
-        </button>
-      ))}
+        {/* CENTER CONTENT */}
+        <section className="w-2/4 p-4 ml-[25%] mr-[25%] min-h-screen">
+          {/* Sticky Category Header */}
+          <div className="sticky top-[52px] z-10 py-2 pb-2  backdrop-blur-md ">
+            <div className="flex flex-wrap gap-2 pb-2">
+              {categories.map((cat, idx) => (
+                <button
+                  key={idx}
+                  onClick={() => setActiveCategory(cat)}
+                  className={clsx(
+                    "whitespace-nowrap px-4 py-1 text-sm border rounded-full transition",
+                    activeCategory === cat
+                      ? "bg-blue-100 text-blue-600 border-blue-300"
+                      : "text-gray-600 hover:text-gray-800 border-gray-300 hover:bg-blue-50"
+                  )}
+                >
+                  {cat}
+                </button>
+              ))}
+            </div>
           </div>
 
+          {/* Posts List */}
           <div className="space-y-4 mt-4">
             {[1, 2, 3, 4, 5, 6, 7].map((post) => (
-              <div key={post} className="border rounded p-4">
+              <div key={post} className="border rounded p-4 bg-white shadow-sm">
                 <div className="flex items-center gap-2 mb-2">
                   <div className="w-8 h-8 bg-blue-200 rounded-full flex items-center justify-center text-blue-800">
                     <User className="w-4 h-4" />
@@ -97,8 +114,8 @@ export default function Accueil() {
           </div>
         </section>
 
-        {/* RIGHT COLUMN */}
-        <aside className="w-1/4 p-4 border-l overflow-y-auto">
+        {/* RIGHT SIDEBAR */}
+        <aside className="w-1/4 p-4 fixed right-0 top-16 bottom-0 border-l overflow-y-auto">
         <div className="bg-white border border-gray-200 rounded p-4 text-sm space-y-3 shadow-sm">
             <div className="flex flex-col items-center space-y-2">
             <div className="w-14 h-14 bg-blue-100 rounded-full flex items-center justify-center">
@@ -140,7 +157,6 @@ export default function Accueil() {
             </div>
         </div>
         </aside>
-
       </main>
     </div>
   );
