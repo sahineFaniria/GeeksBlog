@@ -7,6 +7,9 @@ import {
   CardHeader,
   CardTitle,
 } from "@/components/ui/card";
+import SplitText from "@/blocks/TextAnimations/SplitText/SplitText";
+import ScrambledText from "@/blocks/TextAnimations/ScrambledText/ScrambledText";
+
 
 
 
@@ -28,17 +31,40 @@ export default function Home() {
       {/* Contenu principal, avec padding top pour éviter chevauchement */}
       <main className="pt-[130px] px-10">
         <section className="mb-14">
-          <h1 className="text-black text-4xl font-bold">Bienvenue sur GeeksBlog</h1>
-          <p className="mt-4 text-xl text-neutral-900">Explorez un univers riche en technologies et <br /> en connaissances numériques</p>
-          <p className="text-neutral-700">
+          <SplitText
+            text="Bienvenue sur GeeksBlog"
+            className="text-4xl text-black font-bold text-center"
+            delay={100}
+            duration={0.5}
+            ease="power3.out"
+            splitType="chars"
+            from={{ opacity: 0, y: 40 }}
+            to={{ opacity: 1, y: 0 }}
+            threshold={0.1}
+            rootMargin="-100px"
+            textAlign="center"
+          />
+          <ScrambledText
+            className="scrambled-text-demo"
+            radius={100}
+            duration={1.2}
+            speed={0.5}
+            scrambleChars="10"
+          >
+            <p className=" text-xl text-neutral-900">Explorez un univers riche en technologies et <br /> en connaissances numériques</p>
+            <p className="text-neutral-700">
             Que vous soyez passionné de <strong>développement, administration réseau</strong> ou <br /> curieux technophile, ce blog est fait pour vous...
           </p>
           <p className="text-neutral-700">Commencez votre aventure tech dès maintenant !</p>
           <p className="text-neutral-700">Connectez-vous pour publier, commenter, ou poser votre candidature aux publications.</p>
+          </ScrambledText>
+          
+          
           <Button className="h-7 mt-4 bg-white hover:bg-blue-50 text-blue-600 border border-blue-200">
             Get started <ArrowRight className="w-6 h-6 text-blue-500 ml-1" />
           </Button>
         </section>
+        
 
         {/* Cartes */}
         <section className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-4">
