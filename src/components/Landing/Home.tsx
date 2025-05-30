@@ -18,7 +18,7 @@ import { Link } from "react-router";
 export default function Home() {
   return (
     <div className="w-full">
-      <header className="fixed top-0 w-full flex items-center justify-between px-4 py-3 shadow bg-white z-50">
+      <header className="fixed top-0 w-full flex items-center justify-between px-4 py-3 shadow shadow-blue-200 bg-white z-50">
         <div className="container mx-auto flex items-center justify-between">
           <p className="font-bold text-xl text-blue-600">GeeksBlog</p>
           <div className="flex gap-1.5 items-center">
@@ -26,7 +26,9 @@ export default function Home() {
             <Link to="/connexion">
               <Button className="h-7">Login</Button>
             </Link>
-            <Button className="h-7 bg-white hover:bg-blue-50 text-blue-600 border border-blue-200">Sign in</Button>
+            <Link to="/inscription">
+              <Button className="h-7 bg-white hover:bg-blue-50 text-blue-600 border border-blue-200">Sign in</Button>
+            </Link>
           </div>
         </div>
       </header>

@@ -24,8 +24,8 @@ export default function Acc2() {
       {/* HEADER */}
       <header
         className={clsx(
-          "fixed top-0 w-full z-50 transition-all backdrop-blur-lg",
-          scrolled ? "bg-white/80 shadow" : "bg-white"
+          "fixed top-0 w-full z-50 transition-all backdrop-blur-md",
+          scrolled ? "bg-white/50 shadow shadow-blue-200" : "bg-white"
         )}
       >
         <div className="container mx-auto flex items-center justify-between px-4 py-3">
@@ -75,7 +75,7 @@ export default function Acc2() {
         {/* CENTER CONTENT */}
         <section className="w-2/4 p-4 ml-[25%] mr-[25%] min-h-screen">
           {/* Sticky Category Header */}
-          <div className="sticky top-[52px] z-10 py-2 pb-2  backdrop-blur-md ">
+          <div className="sticky top-[52px] z-10 py-2 pb-2  backdrop-blur-sm ">
             <div className="flex flex-wrap gap-2 pb-2">
               {categories.map((cat, idx) => (
                 <button

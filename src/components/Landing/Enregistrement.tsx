@@ -17,7 +17,7 @@ type EnregistrementItem = {
     return (
         <div className="w-full flex flex-col">
       {/* HEADER FIXED */}
-      <header className="fixed top-0 left-0 w-full bg-white/50 shadow z-50 backdrop-blur-md">
+      <header className="fixed top-0 left-0 w-full bg-white/50 shadow  shadow-blue-200 z-50 backdrop-blur-md">
         <div className="container mx-auto flex items-center justify-between px-4 py-3">
           <p className="font-bold text-xl text-blue-600">GeeksBlog</p>
           <div className="flex gap-2 items-center">
