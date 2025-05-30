@@ -12,6 +12,7 @@ import {
 } from "@/components/ui/select";
 import { FormData } from "./Sign1";
 import { User } from "lucide-react"; // ✅ Import de l’icône utilisateur
+import { Link } from "react-router";
 
 interface Props {
   data: FormData;
@@ -80,9 +81,13 @@ export default function Sign3({ data, onChange, onBack }: Props) {
         <Button variant="outline" onClick={onBack} className="w-1/2 bg-white hover:bg-blue-50 text-blue-600 border border-blue-200">
           Précédent
         </Button>
+        
         <Button disabled={!isValid} onClick={handleSubmit} className="w-1/2">
+          <Link to="/geeksblog.com/accueil">
           Terminer
+          </Link> 
         </Button>
+        
       </div>
     </div>
   );

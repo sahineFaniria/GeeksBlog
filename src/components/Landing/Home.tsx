@@ -9,6 +9,7 @@ import {
 } from "@/components/ui/card";
 import SplitText from "@/blocks/TextAnimations/SplitText/SplitText";
 import ScrambledText from "@/blocks/TextAnimations/ScrambledText/ScrambledText";
+import { Link } from "react-router";
 
 
 
@@ -22,7 +23,9 @@ export default function Home() {
           <p className="font-bold text-xl text-blue-600">GeeksBlog</p>
           <div className="flex gap-1.5 items-center">
             <Sun className="w-5 text-blue-400" />
-            <Button className="h-7">Login</Button>
+            <Link to="/connexion">
+              <Button className="h-7">Login</Button>
+            </Link>
             <Button className="h-7 bg-white hover:bg-blue-50 text-blue-600 border border-blue-200">Sign in</Button>
           </div>
         </div>
@@ -33,7 +36,7 @@ export default function Home() {
         <section className="mb-14">
           <SplitText
             text="Bienvenue sur GeeksBlog"
-            className="text-4xl text-black font-bold text-center"
+            className="text-4xl mb-4 text-black font-bold text-center"
             delay={100}
             duration={0.5}
             ease="power3.out"
@@ -59,10 +62,11 @@ export default function Home() {
           <p className="text-neutral-700">Connectez-vous pour publier, commenter, ou poser votre candidature aux publications.</p>
           </ScrambledText>
           
-          
-          <Button className="h-7 mt-4 bg-white hover:bg-blue-50 text-blue-600 border border-blue-200">
-            Get started <ArrowRight className="w-6 h-6 text-blue-500 ml-1" />
-          </Button>
+          <Link to="/geeksblog.com/accueil">
+            <Button className="h-7 mt-4 bg-white hover:bg-blue-50 text-blue-600 border border-blue-200">
+              Get started <ArrowRight className="w-6 h-6 text-blue-500 ml-1" />
+            </Button>
+          </Link>
         </section>
         
 

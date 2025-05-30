@@ -5,6 +5,7 @@ import {
   MessageCircle, Share, Star, User2, Settings, ArrowRightCircleIcon
 } from "lucide-react";
 import { Button } from "../ui/button";
+import { Link } from "react-router";
 
 export default function Acc2() {
   const [scrolled, setScrolled] = useState(false);
@@ -31,10 +32,14 @@ export default function Acc2() {
           <p className="font-bold text-xl text-blue-600">GeeksBlog</p>
           <div className="flex gap-2 items-center">
             <Sun className="w-5 text-blue-400" />
-            <Button className="h-7">Login</Button>
+            <Link to="/connexion">
+              <Button className="h-7">Login</Button>
+            </Link>
+            <Link to="/inscription">
             <Button className="h-7 bg-white hover:bg-blue-50 text-blue-600 border border-blue-200">
               Sign in
             </Button>
+            </Link>
           </div>
         </div>
       </header>
@@ -140,7 +145,7 @@ export default function Acc2() {
                 <span>Paramètres</span>
             </div>
             <div className="flex items-center gap-2 text-gray-700 hover:text-blue-600 cursor-pointer">
-                <ArrowRightCircleIcon className="w-4 h-4" />
+                <ArrowRightCircleIcon  className="w-4 h-4" />
                 <span>Gérer votre compte</span>
             </div>
             </div>

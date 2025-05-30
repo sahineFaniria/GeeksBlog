@@ -1,3 +1,4 @@
+import { Link } from "react-router"
 import { Button } from "../ui/button"
 import { Checkbox } from "../ui/checkbox"
 import { Input } from "../ui/input"
@@ -36,7 +37,9 @@ function Login() {
 
         <div className="text-sm text-center">
           <p className="mb-1">Vous n’avez encore de compte GeeksGlob ?</p>
-          <p className="text-blue-600 font-bold hover:underline cursor-pointer">Créez un compte GeeksGlob</p>
+          <Link to="/inscription">
+            <p className="text-blue-600 font-bold hover:underline cursor-pointer">Créez un compte GeeksGlob</p>
+          </Link>
         </div>
       </div>
     </div>
