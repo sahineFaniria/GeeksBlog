@@ -1,5 +1,6 @@
 import Acc2 from "@/components/Landing/Acc2";
 import Accueil from "@/components/Landing/Accueil";
+import { EditProfil } from "@/components/Landing/EditProfil";
 import { Enregistrement } from "@/components/Landing/Enregistrement";
 import { Favoris } from "@/components/Landing/Favoris";
 import Home from "@/components/Landing/Home";
@@ -24,6 +25,7 @@ export default function PrivateRoute() {
         <Route path="/geeksblog.com/enregistrement" element={<Enregistrement/>} />
         <Route path="/geeksblog.com/setting" element={<Parametres/>} />
         <Route path="/geeksblog.com/écrire"element={<Postuler/>} />
+        <Route path="/geeksblog.com/gérer" element={<EditProfil/>} />
 
     </Routes>
   )

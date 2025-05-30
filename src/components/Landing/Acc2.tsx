@@ -132,22 +132,22 @@ export default function Acc2() {
             <hr className="border-t border-gray-200" />
 
             <div className="space-y-3">
-            <div className="flex items-center gap-2 text-gray-700 hover:text-blue-600 cursor-pointer">
+            <Link className="flex items-center gap-2 text-gray-700 hover:text-blue-600 cursor-pointer" to="/geeksblog.com/favoris">
                 <Star className="w-4 h-4" />
                 <span>Favoris</span>
-            </div>
-            <div className="flex items-center gap-2 text-gray-700 hover:text-blue-600 cursor-pointer">
+            </Link>
+            <Link className="flex items-center gap-2 text-gray-700 hover:text-blue-600 cursor-pointer" to="/geeksblog.com/enregistrement" >
                 <MessageCircle className="w-4 h-4" />
                 <span>Enregistrement</span>
-            </div>
-            <div className="flex items-center gap-2 text-gray-700 hover:text-blue-600 cursor-pointer">
+            </Link>
+            <Link className="flex items-center gap-2 text-gray-700 hover:text-blue-600 cursor-pointer" to="/geeksblog.com/setting">
                 <Settings className="w-4 h-4" />
                 <span>Paramètres</span>
-            </div>
-            <div className="flex items-center gap-2 text-gray-700 hover:text-blue-600 cursor-pointer">
+            </Link>
+            <Link className="flex items-center gap-2 text-gray-700 hover:text-blue-600 cursor-pointer" to="/geeksblog.com/gérer">
                 <ArrowRightCircleIcon  className="w-4 h-4" />
                 <span>Gérer votre compte</span>
-            </div>
+            </Link>
             </div>
 
             <hr className="border-t border-gray-200" />
@@ -156,9 +156,11 @@ export default function Acc2() {
               <p className="text-sm font-medium">
                 N'attendez plus, Ajoutez votre guide à la communauté dès maintenant !
               </p>
-              <Button className="mt-3 bg-white text-blue-600 hover:bg-gray-100 w-full">
-                Postuler
-              </Button>
+              <Link to="/geeksblog.com/écrire">
+                <Button className="mt-3 bg-white text-blue-600 hover:bg-gray-100 w-full">
+                  Postuler
+                </Button>
+              </Link>
             </div>
         </div>
         </aside>
