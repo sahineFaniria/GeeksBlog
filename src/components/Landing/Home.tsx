@@ -1,5 +1,5 @@
 import { Button } from "../ui/button";
-import { ArrowRight, Sun, Code, Database, Network, Server } from "lucide-react";
+import { ArrowRight, Sun, Code, Database, Network, Server, Moon } from "lucide-react";
 import {
   Card,
   CardContent,
@@ -10,19 +10,47 @@ import {
 import SplitText from "@/blocks/TextAnimations/SplitText/SplitText";
 import ScrambledText from "@/blocks/TextAnimations/ScrambledText/ScrambledText";
 import { Link } from "react-router";
+import { useEffect, useState } from "react";
 
 
 
 
 
 export default function Home() {
+
+  const [darkMode, setDarkMode] = useState(false);
+
+  useEffect(() => {
+    // Synchronisation avec le thème Tailwind
+    if (darkMode) {
+      document.documentElement.classList.add("dark");
+    } else {
+      document.documentElement.classList.remove("dark");
+    }
+  }, [darkMode]);
+
   return (
     <div className="w-full">
       <header className="fixed top-0 w-full flex items-center justify-between px-4 py-3 shadow shadow-blue-200 bg-white z-50">
         <div className="container mx-auto flex items-center justify-between">
           <p className="font-bold text-xl text-blue-600">GeeksBlog</p>
           <div className="flex gap-1.5 items-center">
-            <Sun className="w-5 text-blue-400" />
+            {/* Toggle animé avec icône dedans */}
+            <button
+              onClick={() => setDarkMode(!darkMode)}
+              className="w-12 h-6 flex items-center bg-gray-300 dark:bg-gray-700 rounded-full p-1 transition-colors duration-300"
+            >
+              <div
+                className={`w-4 h-4 flex items-center justify-center rounded-full shadow-md transform duration-300 ease-in-out
+                  ${darkMode ? "translate-x-6 bg-blue-300" : "translate-x-0 bg-white"}`}
+              >
+                {darkMode ? (
+                  <Moon className="w-3 h-3 text-gray-800" />
+                ) : (
+                  <Sun className="w-3 h-3 text-blue-400" />
+                )}
+              </div>
+            </button>
             <Link to="/connexion">
               <Button className="h-7">Login</Button>
             </Link>

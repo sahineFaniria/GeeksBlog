@@ -1,5 +1,5 @@
-import { ArrowRightSquareIcon, Sun } from "lucide-react";
-import { JSX } from "react";
+import { ArrowRightSquareIcon, Moon, Sun } from "lucide-react";
+import { JSX, useEffect, useState } from "react";
 import { Button } from "../ui/button";
 
 type EnregistrementItem = {
@@ -13,6 +13,18 @@ type EnregistrementItem = {
       { id: 1, titre: "Créer un blog avec Next.js", type: "Article" },
       { id: 2, titre: "Découverte Docker", type: "Vidéo" },
     ];
+
+    const [darkMode, setDarkMode] = useState(false);
+
+    useEffect(() => {
+      // Synchronisation avec le thème Tailwind
+      if (darkMode) {
+        document.documentElement.classList.add("dark");
+      } else {
+        document.documentElement.classList.remove("dark");
+      }
+    }, [darkMode]);
+
   
     return (
         <div className="w-full flex flex-col">
@@ -21,7 +33,22 @@ type EnregistrementItem = {
         <div className="container mx-auto flex items-center justify-between px-4 py-3">
           <p className="font-bold text-xl text-blue-600">GeeksBlog</p>
           <div className="flex gap-2 items-center">
-            <Sun className="w-5 text-blue-400" />
+            {/* Toggle animé avec icône dedans */}
+            <button
+              onClick={() => setDarkMode(!darkMode)}
+              className="w-12 h-6 flex items-center bg-gray-300 dark:bg-gray-700 rounded-full p-1 transition-colors duration-300"
+            >
+              <div
+                className={`w-4 h-4 flex items-center justify-center rounded-full shadow-md transform duration-300 ease-in-out
+                  ${darkMode ? "translate-x-6 bg-blue-300" : "translate-x-0 bg-white"}`}
+              >
+                {darkMode ? (
+                  <Moon className="w-3 h-3 text-gray-800" />
+                ) : (
+                  <Sun className="w-3 h-3 text-blue-400" />
+                )}
+              </div>
+            </button>
             <Button className="h-7 bg-white hover:bg-blue-50 text-blue-600 border border-blue-200">
               Déconnexion
               <ArrowRightSquareIcon className="w-6 h-6 text-blue-500 ml-1" />
