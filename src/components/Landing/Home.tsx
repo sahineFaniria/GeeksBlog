@@ -94,59 +94,64 @@ export default function Home() {
         
 
         {/* Cartes */}
-        <section className="w-[100%] m-auto flex gap-4" >
-
-          <div className="w-[250px] h-36 p-2 bg-white dark:bg-neutral-900 border border-blue-300 rounded-lg">
-            <div className="flex flex-row justify-between ">
-              <p className="text-blue-700 font-semibold">Frontend</p>
-              <Code className="text-blue-700" />
-            </div>
-            <p className="text-neutral-700 text-sm dark:text-white/60">Création de l'interface utilisateur visible</p>
-            <p className="text-black text-sm font-medium dark:text-white">HTML, CSS, JavaScript</p>
-            <p className="text-black text-sm font-medium dark:text-white">React.js, Vue.js, Angular</p>
-            <p className="text-black text-sm font-medium dark:text-white">Tailwind CSS, Bootstrap, jQuery</p>
+        <section className="relative w-full overflow-hidden py-6">
+          <div className="animate-scroll flex gap-4 w-max">
+            {/* Cartes dupliquées pour effet boucle */}
+            {[...Array(2)].map((_, index) => (
+              <>
+                  <div className="w-[250px] h-36 p-2 bg-white dark:bg-neutral-900 border border-blue-300 rounded-lg">
+                    <div className="flex flex-row justify-between ">
+                      <p className="text-blue-700 font-semibold">Frontend</p>
+                      <Code className="text-blue-700" />
+                    </div>
+                    <p className="text-neutral-700 text-sm dark:text-white/60">Création de l'interface utilisateur visible</p>
+                    <p className="text-black text-sm font-medium dark:text-white">HTML, CSS, JavaScript</p>
+                    <p className="text-black text-sm font-medium dark:text-white">React.js, Vue.js, Angular</p>
+                    <p className="text-black text-sm font-medium dark:text-white">Tailwind CSS, Bootstrap, jQuery</p>
+                  </div>
+                  <div className="w-[250px] h-36 p-2 bg-white dark:bg-neutral-900 border border-blue-300 rounded-lg">
+                    <div className="flex flex-row justify-between ">
+                      <p className="text-blue-700 font-semibold">Backend</p>
+                      <ChartNetwork className="text-blue-700" />
+                    </div>
+                    <p className="text-neutral-700 text-sm dark:text-white/60">Gestion de la logique métier, API et base de données.</p>
+                    <p className="text-black text-sm font-medium dark:text-white">Node.js, PHP, Java, Python</p>
+                    <p className="text-black text-sm font-medium dark:text-white">Express, Spring Boot, Django</p>
+                    <p className="text-black text-sm font-medium dark:text-white">JWT, REST API, GraphQL</p>
+                    </div>
+                  <div className="w-[250px] h-36 p-2 bg-white dark:bg-neutral-900 border border-blue-300 rounded-lg">
+                    <div className="flex flex-row justify-between ">
+                      <p className="text-blue-700 font-semibold">Réseau</p>
+                      <Network className="text-blue-700" />
+                    </div>
+                    <p className="text-neutral-700 text-sm dark:text-white/60">Configuration et sécurité des réseaux informatiques.</p>
+                    <p className="text-black text-sm font-medium dark:text-white">TCP/IP, DNS, DHCP</p>
+                    <p className="text-black text-sm font-medium dark:text-white">Cisco, Mikrotik, VLAN</p>
+                    <p className="text-black text-sm font-medium dark:text-white">Firewall, VPN, Wireshark</p>
+                  </div>
+                  <div className="w-[250px] h-36 p-2 bg-white dark:bg-neutral-900 border border-blue-300 rounded-lg">
+                    <div className="flex flex-row justify-between ">
+                        <p className="text-blue-700 font-semibold">Base de données</p>
+                        <Database className="text-blue-700" />
+                      </div>
+                      <p className="text-neutral-700 text-sm dark:text-white/60">Stockage, gestion et sécurisation des données.</p>
+                    <p className="text-black text-sm font-medium dark:text-white">MySQL, PostgreSQL, Oracle</p>
+                    <p className="text-black text-sm font-medium dark:text-white">MongoDB, Firebase</p>
+                    <p className="text-black text-sm font-medium dark:text-white">SQL, NoSQL, ORM (Sequelize)</p>
+                  </div>
+                  <div className="w-[250px] h-36 p-2 bg-white dark:bg-neutral-900 border border-blue-300 rounded-lg">
+                    <div className="flex flex-row justify-between ">
+                      <p className="text-blue-700 font-semibold">DevOps & Cloud</p>
+                      <Server className="text-blue-700" />
+                    </div>
+                    <p className="text-neutral-700 text-sm dark:text-white/60">Déploiement, CI/CD, conteneurs et services cloud.</p>
+                    <p className="text-black text-sm font-medium dark:text-white">Docker, Kubernetes</p>
+                    <p className="text-black text-sm font-medium dark:text-white">GitHub Actions, Jenkins</p>
+                    <p className="text-black text-sm font-medium dark:text-white">AWS, Azure, GCP</p>
+                  </div>
+                  </>
+            ))}
           </div>
-          <div className="w-[250px] h-36 p-2 bg-white dark:bg-neutral-900 border border-blue-300 rounded-lg">
-            <div className="flex flex-row justify-between ">
-              <p className="text-blue-700 font-semibold">Backend</p>
-              <ChartNetwork className="text-blue-700" />
-            </div>
-            <p className="text-neutral-700 text-sm dark:text-white/60">Création de l'interface utilisateur visible</p>
-            <p className="text-black text-sm font-medium dark:text-white">HTML, CSS, JavaScript</p>
-            <p className="text-black text-sm font-medium dark:text-white">React.js, Vue.js, Angular</p>
-            <p className="text-black text-sm font-medium dark:text-white">Tailwind CSS, Bootstrap, jQuery</p>
-            </div>
-          <div className="w-[250px] h-36 p-2 bg-white dark:bg-neutral-900 border border-blue-300 rounded-lg">
-            <div className="flex flex-row justify-between ">
-              <p className="text-blue-700 font-semibold">Réseau</p>
-              <Network className="text-blue-700" />
-            </div>
-            <p className="text-neutral-700 text-sm dark:text-white/60">Création de l'interface utilisateur visible</p>
-            <p className="text-black text-sm font-medium dark:text-white">HTML, CSS, JavaScript</p>
-            <p className="text-black text-sm font-medium dark:text-white">React.js, Vue.js, Angular</p>
-            <p className="text-black text-sm font-medium dark:text-white">Tailwind CSS, Bootstrap, jQuery</p>
-          </div>
-          <div className="w-[250px] h-36 p-2 bg-white dark:bg-neutral-900 border border-blue-300 rounded-lg">
-            <div className="flex flex-row justify-between ">
-                <p className="text-blue-700 font-semibold">Base de données</p>
-                <Database className="text-blue-700" />
-              </div>
-              <p className="text-neutral-700 text-sm dark:text-white/60">Création de l'interface utilisateur visible</p>
-            <p className="text-black text-sm font-medium dark:text-white">HTML, CSS, JavaScript</p>
-            <p className="text-black text-sm font-medium dark:text-white">React.js, Vue.js, Angular</p>
-            <p className="text-black text-sm font-medium dark:text-white">Tailwind CSS, Bootstrap, jQuery</p>
-          </div>
-          <div className="w-[250px] h-36 p-2 bg-white dark:bg-neutral-900 border border-blue-300 rounded-lg">
-            <div className="flex flex-row justify-between ">
-              <p className="text-blue-700 font-semibold">Devops & Cloud</p>
-              <Server className="text-blue-700" />
-            </div>
-            <p className="text-neutral-700 text-sm dark:text-white/60">Création de l'interface utilisateur visible</p>
-            <p className="text-black text-sm font-medium dark:text-white">HTML, CSS, JavaScript</p>
-            <p className="text-black text-sm font-medium dark:text-white">React.js, Vue.js, Angular</p>
-            <p className="text-black text-sm font-medium dark:text-white">Tailwind CSS, Bootstrap, jQuery</p>
-          </div>
-
         </section>
       </main>
     </div>
