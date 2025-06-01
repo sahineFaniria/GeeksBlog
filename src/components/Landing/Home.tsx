@@ -1,12 +1,5 @@
 import { Button } from "../ui/button";
-import { ArrowRight, Sun, Code, Database, Network, Server, Moon } from "lucide-react";
-import {
-  Card,
-  CardContent,
-  CardDescription,
-  CardHeader,
-  CardTitle,
-} from "@/components/ui/card";
+import { ArrowRight, Sun, Code, Database, Network, Server, Moon, ChartNetwork } from "lucide-react";
 import SplitText from "@/blocks/TextAnimations/SplitText/SplitText";
 import ScrambledText from "@/blocks/TextAnimations/ScrambledText/ScrambledText";
 import { Link } from "react-router";
@@ -30,8 +23,8 @@ export default function Home() {
   }, [darkMode]);
 
   return (
-    <div className="w-full">
-      <header className="fixed top-0 w-full flex items-center justify-between px-4 py-3 shadow shadow-blue-200 bg-white z-50">
+    <div className="w-full dark:bg-black/95 h-full ">
+      <header className="fixed top-0 w-full flex items-center justify-between px-4 py-3 shadow shadow-blue-200 dark:shadow-blue-400 bg-white dark:bg-black/85 z-50">
         <div className="container mx-auto flex items-center justify-between">
           <p className="font-bold text-xl text-blue-600">GeeksBlog</p>
           <div className="flex gap-1.5 items-center">
@@ -52,7 +45,7 @@ export default function Home() {
               </div>
             </button>
             <Link to="/connexion">
-              <Button className="h-7">Login</Button>
+              <Button className="h-7 dark:bg-blue-500 dark:text-white">Login</Button>
             </Link>
             <Link to="/inscription">
               <Button className="h-7 bg-white hover:bg-blue-50 text-blue-600 border border-blue-200">Sign in</Button>
@@ -66,7 +59,7 @@ export default function Home() {
         <section className="mb-14">
           <SplitText
             text="Bienvenue sur GeeksBlog"
-            className="text-4xl mb-4 text-black font-bold text-center"
+            className="text-4xl mb-4 text-black dark:text-white font-bold text-center"
             delay={100}
             duration={0.5}
             ease="power3.out"
@@ -84,16 +77,16 @@ export default function Home() {
             speed={0.5}
             scrambleChars="10"
           >
-            <p className=" text-xl text-neutral-900">Explorez un univers riche en technologies et <br /> en connaissances numériques</p>
-            <p className="text-neutral-700">
+            <p className=" text-xl text-neutral-900 dark:text-white/95">Explorez un univers riche en technologies et <br /> en connaissances numériques</p>
+            <p className="text-neutral-700 dark:text-white/80">
             Que vous soyez passionné de <strong>développement, administration réseau</strong> ou <br /> curieux technophile, ce blog est fait pour vous...
           </p>
-          <p className="text-neutral-700">Commencez votre aventure tech dès maintenant !</p>
-          <p className="text-neutral-700">Connectez-vous pour publier, commenter, ou poser votre candidature aux publications.</p>
+          <p className="text-neutral-700 dark:text-white/80">Commencez votre aventure tech dès maintenant !</p>
+          <p className="text-neutral-700 dark:text-white/80">Connectez-vous pour publier, commenter, ou poser votre candidature aux publications.</p>
           </ScrambledText>
           
           <Link to="/geeksblog.com/accueil">
-            <Button className="h-7 mt-4 bg-white hover:bg-blue-50 text-blue-600 border border-blue-200">
+            <Button className="h-8 mt-4 bg-white dark:bg-white/90 hover:bg-blue-50 text-blue-600 border border-blue-200">
               Get started <ArrowRight className="w-6 h-6 text-blue-500 ml-1" />
             </Button>
           </Link>
@@ -101,20 +94,59 @@ export default function Home() {
         
 
         {/* Cartes */}
-        <section className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-4">
-          {[...Array(4)].map((_, i) => (
-            <Card key={i} className="w-full">
-              <CardHeader>
-                <CardTitle className="text-blue-600" >Frontend</CardTitle>
-                <CardDescription>Création de l'interface utilisateur visible</CardDescription>
-              </CardHeader>
-              <CardContent>
-                <p className="font-bold">HTML, CSS, JavaScript</p>
-                <p className="font-bold">React.js, Vue.js, Angular</p>
-                <p className="font-bold">Tailwind CSS, Bootstrap, jQuery</p>
-              </CardContent>
-            </Card>
-          ))}
+        <section className="w-[100%] m-auto flex gap-4" >
+
+          <div className="w-[250px] h-36 p-2 bg-white dark:bg-neutral-900 border border-blue-300 rounded-lg">
+            <div className="flex flex-row justify-between ">
+              <p className="text-blue-700 font-semibold">Frontend</p>
+              <Code className="text-blue-700" />
+            </div>
+            <p className="text-neutral-700 text-sm dark:text-white/60">Création de l'interface utilisateur visible</p>
+            <p className="text-black text-sm font-medium dark:text-white">HTML, CSS, JavaScript</p>
+            <p className="text-black text-sm font-medium dark:text-white">React.js, Vue.js, Angular</p>
+            <p className="text-black text-sm font-medium dark:text-white">Tailwind CSS, Bootstrap, jQuery</p>
+          </div>
+          <div className="w-[250px] h-36 p-2 bg-white dark:bg-neutral-900 border border-blue-300 rounded-lg">
+            <div className="flex flex-row justify-between ">
+              <p className="text-blue-700 font-semibold">Backend</p>
+              <ChartNetwork className="text-blue-700" />
+            </div>
+            <p className="text-neutral-700 text-sm dark:text-white/60">Création de l'interface utilisateur visible</p>
+            <p className="text-black text-sm font-medium dark:text-white">HTML, CSS, JavaScript</p>
+            <p className="text-black text-sm font-medium dark:text-white">React.js, Vue.js, Angular</p>
+            <p className="text-black text-sm font-medium dark:text-white">Tailwind CSS, Bootstrap, jQuery</p>
+            </div>
+          <div className="w-[250px] h-36 p-2 bg-white dark:bg-neutral-900 border border-blue-300 rounded-lg">
+            <div className="flex flex-row justify-between ">
+              <p className="text-blue-700 font-semibold">Réseau</p>
+              <Network className="text-blue-700" />
+            </div>
+            <p className="text-neutral-700 text-sm dark:text-white/60">Création de l'interface utilisateur visible</p>
+            <p className="text-black text-sm font-medium dark:text-white">HTML, CSS, JavaScript</p>
+            <p className="text-black text-sm font-medium dark:text-white">React.js, Vue.js, Angular</p>
+            <p className="text-black text-sm font-medium dark:text-white">Tailwind CSS, Bootstrap, jQuery</p>
+          </div>
+          <div className="w-[250px] h-36 p-2 bg-white dark:bg-neutral-900 border border-blue-300 rounded-lg">
+            <div className="flex flex-row justify-between ">
+                <p className="text-blue-700 font-semibold">Base de données</p>
+                <Database className="text-blue-700" />
+              </div>
+              <p className="text-neutral-700 text-sm dark:text-white/60">Création de l'interface utilisateur visible</p>
+            <p className="text-black text-sm font-medium dark:text-white">HTML, CSS, JavaScript</p>
+            <p className="text-black text-sm font-medium dark:text-white">React.js, Vue.js, Angular</p>
+            <p className="text-black text-sm font-medium dark:text-white">Tailwind CSS, Bootstrap, jQuery</p>
+          </div>
+          <div className="w-[250px] h-36 p-2 bg-white dark:bg-neutral-900 border border-blue-300 rounded-lg">
+            <div className="flex flex-row justify-between ">
+              <p className="text-blue-700 font-semibold">Devops & Cloud</p>
+              <Server className="text-blue-700" />
+            </div>
+            <p className="text-neutral-700 text-sm dark:text-white/60">Création de l'interface utilisateur visible</p>
+            <p className="text-black text-sm font-medium dark:text-white">HTML, CSS, JavaScript</p>
+            <p className="text-black text-sm font-medium dark:text-white">React.js, Vue.js, Angular</p>
+            <p className="text-black text-sm font-medium dark:text-white">Tailwind CSS, Bootstrap, jQuery</p>
+          </div>
+
         </section>
       </main>
     </div>
